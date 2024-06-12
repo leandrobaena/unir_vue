@@ -1,47 +1,23 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+﻿<script setup lang="ts">
+    import Buttons from './components/Buttons.vue'
+    import Grid from './components/Grid.vue'
+    import Graph from './components/Graph.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <h1>Gesto de gastos</h1>
+    <p>
+        Esta aplicación permite visualizar un listado de ingresos y gastos durante un periodo de tiempo determinado,
+        pudiendo insertar nuevos registros y visualizando una gráfica del comportamiento de dichos valores.
+    </p>
+    <p>La aplicación corresponde a la actividad Tecnologías de Javascript de la materia Desarrollo de Aplicaciones en Red</p>
+    <div class="buttons">
+        <Buttons></Buttons>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="grid">
+        <Grid></Grid>
+    </div>
+    <div class="graph">
+        <Graph></Graph>
+    </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
