@@ -31,7 +31,7 @@
     ingresos.value = calculateIngresos(products);
     gastos.value = calculateGastos(products);
 
-    function addIngreso(date, value) {
+    function addIngreso(date: string, value: number) {
         products.value.push({ "type": "Ingreso", "date": date, "value": value });
         labels.value = calculateLabels(products);
         ingresos.value = calculateIngresos(products);
@@ -57,7 +57,7 @@
         };
     }
 
-    function addGasto(date, value) {
+    function addGasto(date: string, value: number) {
         products.value.push({ "type": "Gasto", "date": date, "value": value });
         labels.value = calculateLabels(products);
         ingresos.value = calculateIngresos(products);
@@ -103,18 +103,18 @@
         ]
     });
 
-    function calculateLabels(prods) {
-        let response = [];
+    function calculateLabels(prods: any) {
+        let response: any = [];
         products.value.forEach(x => {
-            if (!response.find(y => y === x.date)) {
+            if (!response.find((y:string) => y === x.date)) {
                 response.push(x.date);
             }
         });
         return response;
     }
 
-    function calculateIngresos(prods) {
-        let response = [];
+    function calculateIngresos(prods: any) {
+        let response: any = [];
         products.value.forEach(x => {
             let value = 0;
             products.value.forEach(y => {
@@ -127,8 +127,8 @@
         return response;
     }
 
-    function calculateGastos(prods) {
-        let response = [];
+    function calculateGastos(prods: any) {
+        let response: any = [];
         products.value.forEach(x => {
             let value = 0;
             products.value.forEach(y => {
