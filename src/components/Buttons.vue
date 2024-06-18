@@ -16,12 +16,12 @@
     const visibleGasto = ref(false);
 
     function addIngreso() {
-        emit('addIngreso', '04-01-2024', 3000);
+        emit('addIngreso', fechaIngreso.value, valorIngreso.value);
         visibleIngreso.value = false;
     }
 
     function addGasto() {
-        emit('addGasto', '04-01-2024', 3000);
+        emit('addGasto', fechaGasto.value, valorGasto.value);
         visibleGasto.value = false;
     }
 </script>
@@ -31,11 +31,11 @@
         <span class="text-surface-500 dark:text-surface-400 block mb-8">Ingrese los datos.</span>
         <div class="flex items-center gap-4 mb-4">
             <label for="fecha" class="font-semibold w-24">Fecha</label>
-            <InputText id="fecha" ref="fechaIngreso" />
+            <InputText id="fecha" v-model="fechaIngreso" />
         </div>
         <div class="flex items-center gap-4 mb-8">
             <label for="valor" class="font-semibold w-24">Valor</label>
-            <InputNumber id="valor" ref="valorIngreso" :useGrouping="false" class="flex-auto" />
+            <InputNumber id="valor" v-model="valorIngreso" :useGrouping="false" class="flex-auto" />
         </div>
         <div class="flex justify-end gap-2">
             <Button type="button" label="Cancelar" severity="secondary" @click="visibleIngreso = false"></Button>
@@ -46,11 +46,11 @@
         <span class="text-surface-500 dark:text-surface-400 block mb-8">Ingrese los datos.</span>
         <div class="flex items-center gap-4 mb-4">
             <label for="fecha" class="font-semibold w-24">Fecha</label>
-            <InputText id="fecha" ref="fechaGasto" />
+            <InputText id="fecha" v-model="fechaGasto" />
         </div>
         <div class="flex items-center gap-4 mb-8">
             <label for="valor" class="font-semibold w-24">Valor</label>
-            <InputNumber id="valor" ref="valorGasto" :useGrouping="false" class="flex-auto" />
+            <InputNumber id="valor" v-model="valorGasto" :useGrouping="false" class="flex-auto" />
         </div>
         <div class="flex justify-end gap-2">
             <Button type="button" label="Cancelar" severity="secondary" @click="visibleGasto = false"></Button>
