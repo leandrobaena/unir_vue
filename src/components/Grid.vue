@@ -2,11 +2,7 @@
     import DataTable from 'primevue/datatable';
     import Column from 'primevue/column';
 
-    const products = [{
-        "type": "Ingreso",
-        "date": "01-01-2024",
-        "value": "$1.000"
-    }];
+    defineProps(['products'])
 </script>
 <template>
     <DataTable :value="products" tableStyle="min-width: 50rem">
@@ -15,5 +11,3 @@
         <Column field="value" header="Valor"></Column>
     </DataTable>
 </template>
-<style scoped>
-</style>
